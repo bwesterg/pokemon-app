@@ -9,6 +9,9 @@ fetch("http://localhost:3000/pokemons")
 
 function displayPokemons(pokemons) {
     pokemons.forEach(pokemon => showPokemon(pokemon));
+
+    const loading = document.querySelector('.loading');
+    loading.remove();
 }
 
 function showPokemon(pokemon) {
@@ -18,7 +21,7 @@ function showPokemon(pokemon) {
     const pokemonName = document.createElement('h2');
     pokemonName.textContent = pokemon.name;
 
-    console.log('pokemon', pokemon);
+    // console.log('pokemon', pokemon);
 
     const pokemonImage = document.createElement('img');
     pokemonImage.src = pokemon.sprites.other["official-artwork"].front_default;
