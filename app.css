@@ -74,8 +74,8 @@ header {
     justify-content: center;
     mix-blend-mode: difference;
     max-height: 15rem;
-
 }
+
 
 .pokemon-container {
     display: flex;
