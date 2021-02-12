@@ -69,6 +69,14 @@ header {
     margin-left: 1rem;
 }
 
+.loading {
+    display: flex;
+    justify-content: center;
+    mix-blend-mode: difference;
+    max-height: 15rem;
+
+}
+
 .pokemon-container {
     display: flex;
     flex-wrap: wrap;
