@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -53,20 +56,39 @@ table {
 body {
     height: 100vh;
     width: 100vw;
-    background-color: yellow;
+    background-color: #797b89;
+    font-family: 'Gloria Hallelujah', cursive, sans-serif;
     
 }
 
 header {
     padding-top: 1rem;
     padding-bottom: 2rem;
+    background-color: #838083;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #logo {
-    font-size; 2rem;
-    font-weight: 900;
-    margin-top: 1rem;
-    margin-left: 1rem;
+    
+    margin-left: 2rem;
+}
+
+#logo > img {
+    height: 70px;
+}
+
+nav {
+    margin-right: 2rem;
+}
+
+nav > a {
+    margin-right: 1rem;
+    color: inherit;
+    text-decoration: none;
+    font-size: 1.4rem;
+
 }
 
 .loading {
@@ -87,7 +109,7 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 3px 3px 8px #e5f251;
+    box-shadow: 3px 3px 8px #3f0e38;
     margin: 3rem;
 }
 }
@@ -97,6 +119,7 @@ header {
     font-weight: 600;
     margin-left: 0.5rem;
     margin-top: 0.5rem;
+    font-size: 1.5rem;
 
 }
 
