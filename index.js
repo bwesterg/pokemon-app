@@ -1,8 +1,11 @@
+const baseURL = "http://localhost:3000";
+const pokemonsURL = `${baseURL}/pokemons`;
+
 const pokemonContainer = document.querySelector('.pokemon-container');
 
 
 
-fetch("http://localhost:3000/pokemons")
+fetch(pokemonsURL)
     .then(response => response.json())
     .then(pokemons => displayPokemons(pokemons));
 
