@@ -3,33 +3,47 @@ const pokemonsURL = `${baseURL}/pokemons`;
 
 const pokemonContainer = document.querySelector('.pokemon-container');
 
-
-
 fetch(pokemonsURL)
-    .then(response => response.json())
-    .then(pokemons => displayPokemons(pokemons));
-
+    .then(parseJSON)
+    .then(displayPokemons);
 
 function displayPokemons(pokemons) {
-    pokemons.forEach(pokemon => showPokemon(pokemon));
+    pokemons.forEach(showPokemon);
 
-    const loading = document.querySelector('.loading');
-    loading.remove();
+        removeLoadingGif();
 }
-
+    
+function removeLoadingGif() {
+        const loading = document.querySelector('.loading');
+        loading.remove();
+}
 function showPokemon(pokemon) {
-    const pokemonCard = document.createElement('div');
-    pokemonCard.classList.add('pokemon-card');
-
-    const pokemonName = document.createElement('h2');
-    pokemonName.textContent = pokemon.name;
-
-    // console.log('pokemon', pokemon);
-
-    const pokemonImage = document.createElement('img');
-    pokemonImage.src = pokemon.sprites.other["official-artwork"].front_default;
+    const pokemonCard = createPokemonCard();
+    const pokemonName = createPokemonName(pokemon);
+    const pokemonImage = createPokemonImage(pokemon);
 
     pokemonCard.append(pokemonName, pokemonImage);
-    pokemonContainer.append(pokemonCard);
-    
+    pokemonContainer.append(pokemonCard);   
+}
+ 
+function createPokemonCard() {
+    const pokemonCard = document.createElement('div');
+    pokemonCard.classList.add('pokemon-card');
+    return pokemonCard;
+}
+
+function createPokemonName({ name }) {
+    const pokemonName = document.createElement('h2');
+    pokemonName.textContent = name;
+    return pokemonName;
+}
+
+function createPokemonImage({ sprites }) {
+    const pokemonImage = document.createElement('img');
+    pokemonImage.src = sprites.other["official-artwork"].front_default;
+    return pokemonImage;
+}
+
+function parseJSON(response) {
+    return response.json();
 }
