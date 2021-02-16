@@ -52,9 +52,9 @@ table {
 
 /* END MEYER RESET */
 
-
+ 
 body {
-    height: 100vh;
+    height: fit-content;
     width: 100vw;
     background-color: #797b89;
     font-family: 'Gloria Hallelujah', cursive, sans-serif;
@@ -68,6 +68,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
 }
 
 #logo {
@@ -112,7 +114,7 @@ nav > a {
     box-shadow: 3px 3px 8px #3f0e38;
     margin: 3rem;
 }
-}
+
 
 .pokemon-card > h2 {
     height: 30%;
